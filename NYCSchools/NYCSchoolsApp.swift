@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct NYCSchoolsApp: App {
+    @StateObject private var highSchoolsViewModel = HighSchoolsViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HighSchoolList(highSchoolsViewModel: highSchoolsViewModel)
         }
     }
 }
