@@ -10,41 +10,39 @@ import SwiftUI
 struct HighSchoolDetailView: View {
     private var highSchoolDetailViewModel: HighSchoolDetailViewModel
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .center, spacing: 16) {
-                HStack {
-                    VStack(alignment: .center) {
-                        highSchoolName
+        VStack(alignment: .center, spacing: 16) {
+            HStack {
+                VStack(alignment: .center) {
+                    highSchoolName
+                    
+                    List {
+                        Section(header: Text("Location")) {
+                            schoolAddress
+                        }
+                        Section(header: Text("Website")) {
+                            website
+                        }
+                        Section(header: Text("Contact")) {
+                            phoneNumber
+                            email
+                        }
                         
-                        List {
-                            Section(header: Text("Location")) {
-                                schoolAddress
-                            }
-                            Section(header: Text("Website")) {
-                                website
-                            }
-                            Section(header: Text("Contact")) {
-                                phoneNumber
-                                email
-                            }
-                            
-                            Section(header: Text("SAT Results")) {
-                                numberOfSATTakers
-                                avgSATReadingScore
-                                avgSATWritingScore
-                                mathScore
-                            }
-                            
-                        }.listStyle(GroupedListStyle())
+                        Section(header: Text("SAT Results")) {
+                            numberOfSATTakers
+                            avgSATReadingScore
+                            avgSATWritingScore
+                            mathScore
+                        }
                         
-                    }
+                    }.listStyle(GroupedListStyle())
+                    
                 }
-                Spacer()
             }
-            .navigationBarTitle("High School Details")
-            .navigationBarTitleDisplayMode(.inline)
-            
+            Spacer()
         }
+        .navigationBarTitle("High School Details")
+        .navigationBarTitleDisplayMode(.inline)
+            
     }
     
     init(highSchool: HighSchool, highSchoolSATScores: [HighSchoolSATScore]) {
@@ -165,8 +163,6 @@ extension HighSchoolDetailView {
 struct HighSchoolDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let highSchoolViewModel = HighSchoolsViewModel()
-//        let highSchool = HighSchool(id: "123",
-//                                    name: "Chris' High School")
         let highSchool = HighSchool(id: "123",
                                     name: "Chris' High School Plus Business School",
                                     location: "10 East 15th Street, Manhattan NY 10003 (40.736526, -73.992727)",
