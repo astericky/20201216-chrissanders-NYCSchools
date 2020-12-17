@@ -10,4 +10,4 @@ App lists the high schools and displays information related to the SAT Scores fo
 </div>
 
 
-NOTE: I did not do anything with safe area insets in the code specifically. I used the built in styling to handle it. I can make the change so that the 
+NOTE: I did not do anything with safe area insets in the code specifically. I used the built in styling to handle it. I can make a change to directly show me using it.
