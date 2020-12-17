@@ -12,7 +12,7 @@ struct HighSchoolList: View {
 
     var body: some View {
         NavigationView {
-            List(highSchoolsViewModel.highSchools, id: \.id) { highSchool in
+            List(highSchoolsViewModel.highSchools) { highSchool in
                 HighSchoolRow(highSchool: highSchool, highSchoolsViewModel: highSchoolsViewModel)
             }.navigationTitle("NYC Schools")
         }

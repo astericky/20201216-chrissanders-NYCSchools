@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HighSchool: Codable {
+struct HighSchool: Codable, Identifiable {
     let id: String
     let name: String
     let location: String

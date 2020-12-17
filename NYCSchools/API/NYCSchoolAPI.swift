@@ -40,7 +40,7 @@ extension NYCSchoolsFetcher: NYCSchoolsFetchable {
             .map(\.data)
             .print()
             .decode(type: [HighSchool].self, decoder: decoder)
-            .mapError { .network(description: $0.localizedDescription) }
+            .mapError { HighSchoolError.parsing(description: $0.localizedDescription) }
             .eraseToAnyPublisher()
     }
     
@@ -58,7 +58,7 @@ extension NYCSchoolsFetcher: NYCSchoolsFetchable {
             .map(\.data)
             .print()
             .decode(type: [HighSchoolSATScore].self, decoder: decoder)
-            .mapError { .network(description: $0.localizedDescription) }
+            .mapError { HighSchoolError.parsing(description: $0.localizedDescription) }
             .eraseToAnyPublisher()
     }
 }

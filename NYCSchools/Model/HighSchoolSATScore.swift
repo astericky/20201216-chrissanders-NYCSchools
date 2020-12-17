@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HighSchoolSATScore: Codable {
+struct HighSchoolSATScore: Codable, Identifiable {
     let id: String
     let numberOfSATTakers: String
     let avgSATReadingScore: String
