@@ -19,9 +19,11 @@ struct HighSchoolDetailView: View {
                         Section(header: Text("Location")) {
                             schoolAddress
                         }
+                        
                         Section(header: Text("Website")) {
                             website
                         }
+                        
                         Section(header: Text("Contact")) {
                             phoneNumber
                             email
@@ -33,9 +35,7 @@ struct HighSchoolDetailView: View {
                             avgSATWritingScore
                             mathScore
                         }
-                        
                     }.listStyle(GroupedListStyle())
-                    
                 }
             }
             Spacer()
