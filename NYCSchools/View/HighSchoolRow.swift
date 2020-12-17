@@ -10,6 +10,7 @@ import SwiftUI
 struct HighSchoolRow: View {
     var highSchool: HighSchool
     var highSchoolsViewModel: HighSchoolsViewModel
+    @State var isHighSchoolDetailViewPresented = false
     
     var body: some View {
         NavigationLink(destination: HighSchoolDetailView(highSchool: highSchool,
