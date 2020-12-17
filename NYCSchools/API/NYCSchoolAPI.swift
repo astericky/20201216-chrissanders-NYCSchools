@@ -28,7 +28,7 @@ extension NYCSchoolsFetcher: NYCSchoolsFetchable {
     
     
     /// Get general information for NYC High Schools
-    /// - Returns: AnyPublisher<[HighSchool], HighSchoolError>; returns a list of HS or an error
+    /// - Returns: high school list publisher
     func getHighSchools() -> AnyPublisher<[HighSchool], HighSchoolError> {
         guard let url = NYCSchoolsFetcher.highSchoolListURL else {
             let error = HighSchoolError.network(description: "Couldn't create url")
@@ -46,7 +46,7 @@ extension NYCSchoolsFetcher: NYCSchoolsFetchable {
     
     
     /// Get SAT data for NYC High Schools
-    /// - Returns: AnyPublisher<[HighSchoolSATScore], HighSchoolError>; returns a list of HS SAT Scores or an error
+    /// - Returns: high school SAT scores publisher
     func getHighSchoolSATScores() -> AnyPublisher<[HighSchoolSATScore], HighSchoolError> {
         guard let url = NYCSchoolsFetcher.highSchoolSATScoreURL else {
             let error = HighSchoolError.network(description: "Couldn't create url")
