@@ -12,9 +12,24 @@ struct HighSchoolList: View {
 
     var body: some View {
         NavigationView {
-            List(highSchoolsViewModel.highSchools) { highSchool in
-                HighSchoolRow(highSchool: highSchool, highSchoolsViewModel: highSchoolsViewModel)
-            }.navigationTitle("NYC Schools")
+            // if there are no high schools
+            if highSchoolsViewModel.highSchools.isEmpty {
+                // display no high schools
+                VStack {
+                    Text("No High Schools")
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                        .padding(.top, 60)
+                    Spacer()
+                }
+                .navigationTitle("NYC Schools")
+
+            } else {
+                // display high school list
+                List(highSchoolsViewModel.highSchools) { highSchool in
+                    HighSchoolRow(highSchool: highSchool, highSchoolsViewModel: highSchoolsViewModel)
+                }.navigationTitle("NYC Schools")
+            }
         }
     }
 }
