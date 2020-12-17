@@ -52,7 +52,6 @@ struct HighSchoolDetailView: View {
         } else {
             highSchoolDetailViewModel = HighSchoolDetailViewModel(highSchool: highSchool)
         }
-        
     }
 }
 
