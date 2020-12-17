@@ -32,14 +32,6 @@ extension NYCSchoolsFetcher: NYCSchoolsFetchable {
         }
         
         let decoder = JSONDecoder()
-//        decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
-//            let container = try decoder.singleValueContainer()
-//            let dateString = try container.decode(String.self)
-//            if let date = ISO8601DateFormatter().date(from: dateString) {
-//                return date
-//            }
-//            throw DateError.error(description: "There was an error decoding the date.")
-//        })
         return session.dataTaskPublisher(for: URLRequest(url: url))
             .map(\.data)
             .print()
@@ -55,14 +47,6 @@ extension NYCSchoolsFetcher: NYCSchoolsFetchable {
         }
         
         let decoder = JSONDecoder()
-//        decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
-//            let container = try decoder.singleValueContainer()
-//            let dateString = try container.decode(String.self)
-//            if let date = ISO8601DateFormatter().date(from: dateString) {
-//                return date
-//            }
-//            throw DateError.error(description: "There was an error decoding the date.")
-//        })
         return session.dataTaskPublisher(for: URLRequest(url: url))
             .map(\.data)
             .print()
