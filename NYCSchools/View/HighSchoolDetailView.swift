@@ -46,10 +46,14 @@ struct HighSchoolDetailView: View {
     }
     
     init(highSchool: HighSchool, highSchoolSATScores: [HighSchoolSATScore]) {
+        // get SAT scores for this high school
         let filteredHighSchoolSATScores = highSchoolSATScores.filter { $0.id == highSchool.id }
+        // if there are SAT Scores for this high school
         if !filteredHighSchoolSATScores.isEmpty {
+            // initialize the view model with the high school SAT scores
             highSchoolDetailViewModel = HighSchoolDetailViewModel(highSchool: highSchool, highSchoolSATScore: filteredHighSchoolSATScores[0])
         } else {
+            // initialize the view model without the high school SAT scores
             highSchoolDetailViewModel = HighSchoolDetailViewModel(highSchool: highSchool)
         }
     }
@@ -83,81 +87,36 @@ extension HighSchoolDetailView {
     }
     
     var phoneNumber: some View {
-        HStack {
-            Text("Phone Number:")
-                .fontWeight(.bold)
-            Spacer()
-            Text(highSchoolDetailViewModel.highSchool.phone)
-        }
+        HighSchoolDataRow(label: "Phone Number:",
+                          data: highSchoolDetailViewModel.highSchool.phone)
     }
     
     var email: some View {
-        HStack {
-            Text("Email:")
-                .fontWeight(.bold)
-            Spacer()
-            if let email = highSchoolDetailViewModel.highSchool.email {
-                Text(email)
-            } else {
-                Text("Unavailable")
-            }
-            
-        }
+        HighSchoolDataRow(label: "Email:",
+                          data: highSchoolDetailViewModel.highSchool.email)
     }
 
     var numberOfSATTakers: some View {
-        HStack {
-            Text("Number of SAT Takers:")
-                .fontWeight(.bold)
-            Spacer()
-            if let numberOfSATTakers = highSchoolDetailViewModel.highSchoolSATScore?.numberOfSATTakers {
-                Text(numberOfSATTakers)
-            } else {
-                Text("Unavailable")
-            }
-        
-        }
+        HighSchoolDataRow(label: "Avg. Reading Score:",
+                          data: highSchoolDetailViewModel.highSchoolSATScore?.numberOfSATTakers)
     }
     
     var avgSATReadingScore: some View {
-        HStack {
-            Text("Avg. Reading Score:")
-                .fontWeight(.bold)
-            Spacer()
-            if let avgSATReadingScore = highSchoolDetailViewModel.highSchoolSATScore?.avgSATReadingScore {
-                Text(avgSATReadingScore)
-            } else {
-                Text("Unavailable")
-            }
-        }
+        HighSchoolDataRow(label: "Avg. Reading Score:",
+                          data: highSchoolDetailViewModel.highSchoolSATScore?.avgSATReadingScore)
     }
     
     var avgSATWritingScore: some View {
-        HStack {
-            Text("Avg. Writing Score:")
-                .fontWeight(.bold)
-            Spacer()
-            if let avgSATWritingScore = highSchoolDetailViewModel.highSchoolSATScore?.avgSATWritingScore {
-                Text(avgSATWritingScore)
-            } else {
-                Text("Unavailable")
-            }
-        }
+        HighSchoolDataRow(label: "Avg. Writing Score:",
+                          data: highSchoolDetailViewModel.highSchoolSATScore?.avgSATWritingScore)
     }
     
     var mathScore: some View {
-        HStack {
-            Text("Avg. Math Score:")
-                .fontWeight(.bold)
-            Spacer()
-            if let avgSATMathScore = highSchoolDetailViewModel.highSchoolSATScore?.avgSATMathScore {
-                Text(avgSATMathScore)
-            } else {
-                Text("Unavailable")
-            }
-        }
+        HighSchoolDataRow(label: "Avg. Math Score:",
+                          data: highSchoolDetailViewModel.highSchoolSATScore?.avgSATMathScore)
     }
 }
+
 
 struct HighSchoolDetailView_Previews: PreviewProvider {
     static var previews: some View {

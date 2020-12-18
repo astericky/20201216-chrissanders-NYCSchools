@@ -17,6 +17,7 @@
 		2A3ED494258A6F5500CCD9D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A3ED493258A6F5500CCD9D8 /* Preview Assets.xcassets */; };
 		2A3ED49F258A6F5600CCD9D8 /* NYCSchoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3ED49E258A6F5600CCD9D8 /* NYCSchoolsTests.swift */; };
 		2A3ED4AA258A6F5600CCD9D8 /* NYCSchoolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3ED4A9258A6F5600CCD9D8 /* NYCSchoolsUITests.swift */; };
+		2A4E2C2C258D1F2B0062C5A5 /* HighSchoolDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E2C2B258D1F2B0062C5A5 /* HighSchoolDataRow.swift */; };
 		2AF2A056258A7F9300A6020D /* NYCSchoolAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2A055258A7F9300A6020D /* NYCSchoolAPI.swift */; };
 		2AF2A061258A857700A6020D /* HighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2A060258A857700A6020D /* HighSchool.swift */; };
 		2AF2A066258A858400A6020D /* HighSchoolsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2A065258A858400A6020D /* HighSchoolsError.swift */; };
@@ -57,6 +58,7 @@
 		2A3ED4A5258A6F5600CCD9D8 /* NYCSchoolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYCSchoolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A3ED4A9258A6F5600CCD9D8 /* NYCSchoolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolsUITests.swift; sourceTree = "<group>"; };
 		2A3ED4AB258A6F5600CCD9D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A4E2C2B258D1F2B0062C5A5 /* HighSchoolDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolDataRow.swift; sourceTree = "<group>"; };
 		2AF2A055258A7F9300A6020D /* NYCSchoolAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolAPI.swift; sourceTree = "<group>"; };
 		2AF2A060258A857700A6020D /* HighSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchool.swift; sourceTree = "<group>"; };
 		2AF2A065258A858400A6020D /* HighSchoolsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolsError.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				2A3ED48E258A6F5400CCD9D8 /* HighSchoolList.swift */,
 				2A250AA7258AAC03003A9A92 /* HighSchoolRow.swift */,
 				2A250A90258AA86C003A9A92 /* HighSchoolDetailView.swift */,
+				2A4E2C2B258D1F2B0062C5A5 /* HighSchoolDataRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				2A250AA8258AAC03003A9A92 /* HighSchoolRow.swift in Sources */,
 				2AF2A071258A8A4200A6020D /* HighSchoolSATScore.swift in Sources */,
 				2A3ED48F258A6F5400CCD9D8 /* HighSchoolList.swift in Sources */,
+				2A4E2C2C258D1F2B0062C5A5 /* HighSchoolDataRow.swift in Sources */,
 				2A250A89258A9F03003A9A92 /* HighSchoolDetailsViewModel.swift in Sources */,
 				2A250A91258AA86C003A9A92 /* HighSchoolDetailView.swift in Sources */,
 				2AF2A056258A7F9300A6020D /* NYCSchoolAPI.swift in Sources */,
