@@ -12,25 +12,48 @@ struct HighSchoolList: View {
 
     var body: some View {
         NavigationView {
-            // if there are no high schools
-            if highSchoolsViewModel.highSchools.isEmpty {
-                // display no high schools
-                VStack {
-                    Text("No High Schools")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                        .padding(.top, 60)
-                    Spacer()
-                }
-                .navigationTitle("NYC Schools")
-
+            
+            if highSchoolsViewModel.isLoadingHighSchools {
+                loadingIndicator
             } else {
-                // display high school list
-                List(highSchoolsViewModel.highSchools) { highSchool in
-                    HighSchoolRow(highSchool: highSchool, highSchoolsViewModel: highSchoolsViewModel)
-                }.navigationTitle("NYC Schools")
+                content
             }
+            
         }
+    }
+}
+
+extension HighSchoolList {
+    @ViewBuilder
+    var content: some View {
+        // if there are no high schools
+        if highSchoolsViewModel.highSchools.isEmpty {
+            // display no high schools
+            VStack {
+                Text("No High Schools")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .padding(.top, 60)
+                Spacer()
+            }
+            .navigationTitle("NYC Schools")
+
+        } else {
+            // display high school list
+            List(highSchoolsViewModel.highSchools) { highSchool in
+                HighSchoolRow(highSchool: highSchool, highSchoolsViewModel: highSchoolsViewModel)
+            }
+            .navigationTitle("NYC Schools")
+        }
+    }
+    
+    var loadingIndicator: some View {
+        VStack {
+            ProgressView("Loading...")
+                .padding(.top, 60)
+            Spacer()
+        }
+        .navigationTitle("NYC Schools")
     }
 }
 

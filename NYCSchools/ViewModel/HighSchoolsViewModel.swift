@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 final class HighSchoolsViewModel: ObservableObject {
+    @Published var isLoadingHighSchools = false
     @Published var highSchools = [HighSchool]()
     @Published var highSchoolSATScores = [HighSchoolSATScore]()
     
@@ -21,6 +22,7 @@ final class HighSchoolsViewModel: ObservableObject {
     }
     
     func getHighSchools() {
+        isLoadingHighSchools = true
         nycSchoolsFetcher.getHighSchools()
             .receive(on: DispatchQueue.main)
             .sink(
@@ -36,6 +38,7 @@ final class HighSchoolsViewModel: ObservableObject {
                 receiveValue: { [weak self] highSchools in
                     guard let self = self else { return }
                     self.highSchools = highSchools
+                    self.isLoadingHighSchools = false
                 })
             .store(in: &subscriptions)
     }
