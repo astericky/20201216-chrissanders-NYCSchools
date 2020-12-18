@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HighSchoolList: View {
-    @ObservedObject var highSchoolsViewModel: HighSchoolsViewModel
+    @EnvironmentObject var highSchoolsViewModel: HighSchoolsViewModel
 
     var body: some View {
         NavigationView {
@@ -48,17 +48,13 @@ extension HighSchoolList {
     }
     
     var loadingIndicator: some View {
-        VStack {
-            ProgressView("Loading...")
-                .padding(.top, 60)
-            Spacer()
-        }
-        .navigationTitle("NYC Schools")
+        LoadingIndicator(title: "Loading NYC Schools", navigationTitle: "NYC Schools")
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HighSchoolList(highSchoolsViewModel: HighSchoolsViewModel())
+        HighSchoolList()
+            .environmentObject(HighSchoolsViewModel())
     }
 }

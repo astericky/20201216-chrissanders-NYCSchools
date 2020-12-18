@@ -9,8 +9,15 @@ import SwiftUI
 
 struct LoadingIndicator: View {
     var title: String?
+    var navigationTitle: String?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ProgressView(title ?? "Loading...")
+                .padding(.top, 60)
+            Spacer()
+        }
+        .navigationTitle(navigationTitle ?? "")
     }
 }
 
