@@ -80,8 +80,9 @@ extension HighSchoolDetailView {
     
     var website: some View {
         HStack {
-            Link(highSchoolDetailViewModel.highSchool.website,
-                 destination: URL(string: highSchoolDetailViewModel.highSchool.website)!)                
+            Text(highSchoolDetailViewModel.highSchool.website)
+                .font(.caption)
+                .fontWeight(.bold)
         }
     }
     
