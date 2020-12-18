@@ -38,7 +38,6 @@ extension NYCSchoolsFetcher: NYCSchoolsFetchable {
         let decoder = JSONDecoder()
         return session.dataTaskPublisher(for: URLRequest(url: url))
             .map(\.data)
-            .print()
             .decode(type: [HighSchool].self, decoder: decoder)
             .mapError { HighSchoolError.parsing(description: $0.localizedDescription) }
             .eraseToAnyPublisher()
@@ -56,7 +55,6 @@ extension NYCSchoolsFetcher: NYCSchoolsFetchable {
         let decoder = JSONDecoder()
         return session.dataTaskPublisher(for: URLRequest(url: url))
             .map(\.data)
-            .print()
             .decode(type: [HighSchoolSATScore].self, decoder: decoder)
             .mapError { HighSchoolError.parsing(description: $0.localizedDescription) }
             .eraseToAnyPublisher()
