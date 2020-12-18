@@ -28,5 +28,6 @@ struct HighSchoolDataRow: View {
 struct HighSchoolDataRow_Previews: PreviewProvider {
     static var previews: some View {
         HighSchoolDataRow(label: "Average Data:", data: "123")
+            .previewLayout(.fixed(width: 320, height: 50))
     }
 }
